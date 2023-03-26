@@ -1,34 +1,30 @@
 {
-  "name": "typescript-webpack-game-starter",
+  "name": "client",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open",
-    "prod": "webpack --production"
+    "dev": "npx nodemon -c-1 --watch src --exec \"pnpm run build && http-server ./ -p 3000\"",
+    "build": "webpack --mode development"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HarveyD/typescript-webpack-game-starter.git"
-  },
-  "author": "Harvey Delaney",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/HarveyD/typescript-webpack-game-starter/issues"
-  },
-  "homepage": "https://github.com/HarveyD/typescript-webpack-game-starter#readme",
-  "devDependencies": {
-    "css-loader": "^0.28.11",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.21.0",
-    "ts-loader": "^4.2.0",
-    "webpack": "^4.6.0",
-    "webpack-cli": "^2.0.15",
-    "webpack-dev-server": "^3.1.3"
-  },
   "dependencies": {
-    "typescript": "^2.8.3"
+    "express": "^4.18.2",
+    "pixi.js": "^7.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "http-server": "^14.1.1",
+    "nodemon": "^2.0.20",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
